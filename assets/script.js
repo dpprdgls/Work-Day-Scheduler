@@ -3,7 +3,7 @@
 // in the html.
 
 const localeSettings = {};
-daysjs.locale(localeSettings);
+dayjs.locale(localeSettings);
 //waits until the dom is fully loaded before running the code inside the func 
 
 
@@ -13,7 +13,7 @@ $(function () {
   const currentHour = dayjs().format('H');
 //changes color of block based on past present future hours and toggles class
   function colorHour(){
-    $('.time-block').each(funciotn() {
+    $('.time-block').each(function() {
       const blockHour = parseInt(this.id);
       $(this).toggleClass('past', blockHour < currentHour);
       $(this).toggleClass('present', blockHour === currentHour);
@@ -32,7 +32,7 @@ $(function () {
 
   //update the color of the block based on the current hour of the day
   function colorUpdate() {
-    $('.time-block').each(funciotn() {
+    $('.time-block').each(function() {
       const blockHour = parseInt(this.id);
       if (blockHour === currentHour){
         $(this).removeClass('past future').addClass('present');
@@ -64,7 +64,7 @@ function updateTimeNow() {
   textInput();
   colorUpdate();
   
-  setInterval(updateTime, 1000);
+  setInterval(updateTimeNow, 1000);
 
 });
 
