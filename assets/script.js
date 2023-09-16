@@ -12,7 +12,7 @@ $(function () {
 
   const currentHour = dayjs.().format('H');
 //changes color of block based on past present future hours and toggles class
-  function hourColor(){
+  function colorHour(){
     $('.time-block').each(funciotn(){
       const blockHour = parseInt(this.id);
       $(this).toggleClass('past', blockHour < currentHour);
@@ -44,9 +44,25 @@ $(function () {
     });
   }
 
+  //get user input from local storage and set textare value for every time block 
+$('.time-block').each(function(){
+  const key = $(this).attr('id');
+  const value = localStorage.getItem(key);
+  $(this).children('.description').val(value);
+});
+//this function updates the current date and time in the header of the page 
+function updateTimeNow(){
+  const dateElement = $('#date');
+  const timeElement = $('#time');
+  const currentDate = dayjs().format('dddd, MMMM D, YYYY');
+  const currentTime = dayjs().format('h:mm:ss A');
+  dateElement.text(currentDate);
+  timeElement.text(currentTime);
+}
 
-
-  
+  colorHour();
+  textInput();
+  colorUpdate();
 
 }
 
