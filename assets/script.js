@@ -27,14 +27,28 @@ $(function () {
       const key = $(this).parent().attr('id');
       const value = $(this).siblings('.description').val();
       localStorage.setItem(key, value);
-  });
-}
+    });
+  }
 
+  //update the color of the block based on the current hour of the day
+  function colorUpdate(){
+    $('.time-block').each(funciotn(){
+      const blockHour = parseInt(this.id);
+      if (blockHour === currentHour){
+        $(this).removeClass('past future').addClass('present');
+      } else if (blockHour < currentHour){
+        $(this).removeClass('future present').addClass('past');
+      } else {
+        $(this).removeClass('present past').addClass('future');
+      }
+    });
+  }
 
 
 
   
-  });
+
+}
 
     // TODO: Add a listener for click events on the save button. This code should
     // use the id in the containing time-block as a key to save the user input in
