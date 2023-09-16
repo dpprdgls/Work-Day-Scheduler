@@ -8,8 +8,18 @@ daysjs.locale(localeSettings);
 
 
 $(function () {
+  //gets current hour of day using Day.js library
 
-
+  const currentHour = dayjs.().format('H');
+//changes color of block based on past present future hours and toggles class
+  function hourColor(){
+    $('.time-block').each(funciotn(){
+      const blockHour = parseInt(this.id);
+      $(this).toggleClass('past', blockHour < currentHour);
+      $(this).toggleClass('present', blockHour === currentHour);
+      $(this).toggleClass('future', blockHour > currentHour);
+    });
+  }
 
 
 
