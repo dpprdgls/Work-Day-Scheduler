@@ -10,10 +10,10 @@ daysjs.locale(localeSettings);
 $(function () {
   //gets current hour of day using Day.js library
 
-  const currentHour = dayjs.().format('H');
+  const currentHour = dayjs().format('H');
 //changes color of block based on past present future hours and toggles class
   function colorHour(){
-    $('.time-block').each(funciotn(){
+    $('.time-block').each(funciotn() {
       const blockHour = parseInt(this.id);
       $(this).toggleClass('past', blockHour < currentHour);
       $(this).toggleClass('present', blockHour === currentHour);
@@ -22,7 +22,7 @@ $(function () {
   }
 
   //when user inputs text and clicks save it will store data to local storage for that text area
-  function textInput(){
+  function textInput() {
     $('.saveBtn').on('click', function(){
       const key = $(this).parent().attr('id');
       const value = $(this).siblings('.description').val();
@@ -31,8 +31,8 @@ $(function () {
   }
 
   //update the color of the block based on the current hour of the day
-  function colorUpdate(){
-    $('.time-block').each(funciotn(){
+  function colorUpdate() {
+    $('.time-block').each(funciotn() {
       const blockHour = parseInt(this.id);
       if (blockHour === currentHour){
         $(this).removeClass('past future').addClass('present');
@@ -51,7 +51,7 @@ $('.time-block').each(function(){
   $(this).children('.description').val(value);
 });
 //this function updates the current date and time in the header of the page 
-function updateTimeNow(){
+function updateTimeNow() {
   const dateElement = $('#date');
   const timeElement = $('#time');
   const currentDate = dayjs().format('dddd, MMMM D, YYYY');
@@ -63,8 +63,10 @@ function updateTimeNow(){
   colorHour();
   textInput();
   colorUpdate();
+  
+  setInterval(updateTime, 1000);
 
-}
+});
 
     // TODO: Add a listener for click events on the save button. This code should
     // use the id in the containing time-block as a key to save the user input in
