@@ -21,7 +21,14 @@ $(function () {
     });
   }
 
-
+  //when user inputs text and clicks save it will store data to local storage for that text area
+  function textInput(){
+    $('.saveBtn').on('click', function(){
+      const key = $(this).parent().attr('id');
+      const value = $(this).siblings('.description').val();
+      localStorage.setItem(key, value);
+  });
+}
 
 
 
