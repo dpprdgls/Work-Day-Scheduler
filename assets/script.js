@@ -45,7 +45,7 @@ $(function () {
   }
 
   //get user input from local storage and set textare value for every time block 
-$('.time-block').each(function(){
+$('.time-block').each(function() {
   const key = $(this).attr('id');
   const value = localStorage.getItem(key);
   $(this).children('.description').val(value);
@@ -55,7 +55,7 @@ function updateTimeNow() {
   const dateElement = $('#date');
   const timeElement = $('#time');
   const currentDate = dayjs().format('dddd, MMMM D, YYYY');
-  const currentTime = dayjs().format('h:mm:ss A');
+  const currentTime = dayjs().format('hh:mm:ss A');
   dateElement.text(currentDate);
   timeElement.text(currentTime);
 }
