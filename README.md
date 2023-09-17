@@ -2,6 +2,8 @@
 
 ## Description
 
+This Work Day Scheduler contains a simple scheduler that helps you ease through your busy schedule. The scheduler helps you keep track of time by indicating the current time with grey boxes indicating the past, red boxes indicating the present, and green boxes indicating the future.
+
 ## User Story
 
 ```md
@@ -17,7 +19,7 @@ GIVEN I am using a daily planner to create a schedule
 WHEN I open the planner
 THEN the current day is displayed at the top of the calendar
 WHEN I scroll down
-THEN I am presented with timeblocks for standard business hours of 9am&ndash;5pm
+THEN I am presented with timeblocks for standard business hours of 9am-5pm
 WHEN I view the timeblocks for that day
 THEN each timeblock is color coded to indicate whether it is in the past, present, or future
 WHEN I click into a timeblock
@@ -46,9 +48,9 @@ or visit the link:
 
 ## Credits
 
+[How to format Dates in JavaScript with DAY.JS](https://www.youtube.com/watch?v=vzGzys3enCE&ab_channel=iEatWebsites)
 
-
-
+[jQuery Tutorial | jQuery Tutorial For Beginners | jQuery | jQuery full course | Simplilearn](https://www.youtube.com/watch?v=QhQ4m5g2fhA&ab_channel=Simplilearn)
 
 ## License
 
